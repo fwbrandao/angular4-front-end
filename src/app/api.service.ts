@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   messages = [];
   tests = [];
+  starWars = [];
 
   constructor( private http: Http) {}
 
@@ -17,6 +18,12 @@ export class ApiService {
   getTests() {
     this.http.get('http://localhost:3000/tests').subscribe(res => {
       this.tests = res.json();
+    });
+  }
+
+  getStarWars() {
+    this.http.get('http://localhost:3000/starWars').subscribe(res => {
+      this.starWars = res.json();
     });
   }
 }

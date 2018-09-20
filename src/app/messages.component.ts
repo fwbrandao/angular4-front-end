@@ -9,7 +9,11 @@ import { ApiService } from './api.service';
 </div>
 <div *ngFor="let test of apiService.tests">
   <mat-card>{{test.test}}</mat-card>
-</div>`
+</div>
+<div *ngFor="let starWars of apiService.starWars">
+  <mat-card>{{starWars.goods}} + {{starWars.bads}}</mat-card>
+</div>
+`
 })
 export class MessagesComponent {
 
@@ -18,5 +22,6 @@ export class MessagesComponent {
   ngOnInit() {
     this.apiService.getMessages();
     this.apiService.getTests();
+    this.apiService.getStarWars();
   }
 }
