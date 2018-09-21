@@ -11,7 +11,7 @@ import { ApiService } from './api.service';
   <mat-card>{{test.test}}</mat-card>
 </div>
 <div *ngFor="let starWars of apiService.starWars">
-  <mat-card>{{starWars.goods}} + {{starWars.bads}}</mat-card>
+  <mat-card>{{starWars.good}} {{starWars.bads}}</mat-card>
 </div>
 `
 })
