@@ -4,8 +4,7 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class ApiService {
   messages = [];
-  tests = [];
-  starWars = [];
+  users = [];
 
   constructor(private http: Http) {}
 
@@ -15,13 +14,11 @@ export class ApiService {
     });
   }
 
-  sendUserRegistration(registerData) {
-    this.http
-      .post("http://localhost:3000/register", registerData)
-      .subscribe(res => {});
+  getUsers() {
+    this.http.get("http://localhost:3000/users").subscribe(res => {
+      this.users = res.json();
+    });
   }
-
-  loginUser() {}
 
   getTests() {
     this.http.get("http://localhost:3000/tests").subscribe(res => {
